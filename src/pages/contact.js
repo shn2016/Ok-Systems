@@ -1,11 +1,11 @@
 import * as React from "react";
-import Oks from "../components/Home";
+import Contact from "../components/Contact";
 import Layout from "../components/Layout";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Oks />
+      <Contact />
     </Layout>
   );
 };
