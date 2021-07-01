@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "oks",
+    siteUrl:"https://www.oksystems.com.au/",
+    title: "Ok Systems",
     description: "The online web service provider",
   },
   plugins: [
