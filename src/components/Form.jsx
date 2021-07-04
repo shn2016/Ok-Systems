@@ -24,9 +24,23 @@ export default function ContactForm(props) {
           ease: "easeOutQuad",
         },
   };
+
+  const onFinish = (values) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact",
+        ...values,
+      }),
+    })
+      .then(() => alert("Form Successfully Sent"))
+      .catch((error) => alert(error));
+  };
+
   return (
-    <div className="home-page-wrapper content6-wrapper">
-      <OverPack className="home-page content6" component={Row}>
+    <div className="home-page-wrapper content11-wrapper">
+      <OverPack className="home-page content11" component={Row}>
         <QueueAnim
           type={animType.queue}
           key="text"
@@ -46,7 +60,14 @@ export default function ContactForm(props) {
             method="post"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            onFinish={onFinish}
           >
+            <Form.Item name="bot-field" hidden key="bot-field">
+              <input type="hidden" name="bot-field" />
+            </Form.Item>
+            <Form.Item name="contact" key="contact" hidden>
+              <input type="hidden" name="form-name" value="contact" />
+            </Form.Item>
             <Form.Item
               label="Name"
               name="name"
@@ -55,7 +76,14 @@ export default function ContactForm(props) {
             >
               <Input name="name" />
             </Form.Item>
-
+            <Form.Item
+              label="Phone"
+              name="phone"
+              key="phone"
+              rules={[{ required: true, message: "Please input your phone!" }]}
+            >
+              <Input name="phone" />
+            </Form.Item>
             <Form.Item
               label="email"
               name="email"
@@ -63,7 +91,7 @@ export default function ContactForm(props) {
               key="email"
               rules={[{ required: true, message: "Please input your email!" }]}
             >
-              <Input name="email" type="email" />
+              <Input name="Email" type="email" />
             </Form.Item>
             <Form.Item
               label="Message"
@@ -75,9 +103,6 @@ export default function ContactForm(props) {
             >
               <Input.TextArea row={4} name="message" />
             </Form.Item>
-
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="contact-form" value="contact" />
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
               <Button type="primary" htmlType="submit">
                 Submit
