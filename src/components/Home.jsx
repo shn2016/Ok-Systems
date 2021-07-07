@@ -20,7 +20,6 @@ import {
   BookDataSource,
   PortfolioDataSource,
 } from "./data.source";
-import "./less/antMotionStyle.module.less";
 
 let isMobile;
 enquireScreen((b) => {

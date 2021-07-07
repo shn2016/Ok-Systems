@@ -25,6 +25,12 @@ export default function ContactForm(props) {
         },
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   const onFinish = (values) => {
     fetch("/", {
       method: "POST",
@@ -39,8 +45,8 @@ export default function ContactForm(props) {
   };
 
   return (
-    <div className="home-page-wrapper content11-wrapper">
-      <OverPack className="home-page content11" component={Row}>
+    <div className="home-page-wrapper content5-wrapper">
+      <OverPack className="home-page content5" component={Row}>
         <QueueAnim
           type={animType.queue}
           key="text"

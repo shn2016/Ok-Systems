@@ -107,6 +107,7 @@ export const Nav30DataSource = {
   },
   mobileMenu: { className: 'header3-mobile-menu' },
 };
+
 export const Banner50DataSource = {
   wrapper: { className: 'home-page-wrapper banner5' },
   page: { className: 'home-page banner5-page' },

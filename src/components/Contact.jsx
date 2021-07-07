@@ -5,9 +5,9 @@ import { enquireScreen } from "enquire-js";
 
 import Feature2 from "./Feature2";
 import ContactForm from "./Form";
+import Book from "./Book";
 
-import { Feature20DataSource } from "./data.source";
-import "./less/antMotionStyle.module.less";
+import { Feature20DataSource, BookDataSource } from "./data.source";
 
 let isMobile;
 enquireScreen((b) => {
@@ -38,6 +38,12 @@ export default class Home extends React.Component {
         isMobile={this.state.isMobile}
       />,
       <ContactForm key="contactForm" isMobile={this.state.isMobile} />,
+      <Book
+        id="Content11_0"
+        key="Content11_0"
+        dataSource={BookDataSource}
+        isMobile={this.state.isMobile}
+      />,
     ];
     return (
       <div
