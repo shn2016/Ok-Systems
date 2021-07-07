@@ -68,12 +68,12 @@ export default function ContactForm(props) {
             data-netlify-honeypot="bot-field"
             onFinish={onFinish}
           >
-            <Form.Item name="bot-field" hidden key="bot-field">
+            {/* <Form.Item name="bot-field" hidden key="bot-field">
               <input type="hidden" name="bot-field" />
             </Form.Item>
             <Form.Item name="contact" key="contact" hidden>
               <input type="hidden" name="form-name" value="contact" />
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item
               label="Name"
               name="name"
