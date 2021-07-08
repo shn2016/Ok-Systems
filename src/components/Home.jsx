@@ -11,21 +11,13 @@ import Testimonials from "./Testimonials";
 import Book from "./Book";
 import Portfolio from "./Portfolio";
 
-import {
-  Banner50DataSource,
-  ServiceDataSource,
-  StatDataSource,
-  ProductDataSource,
-  TestimonialsDataSource,
-  BookDataSource,
-  PortfolioDataSource,
-} from "./data.source";
+import DataSource from "./data.source";
+import DataSourceCN from "./data.source.cn";
 
 let isMobile;
 enquireScreen((b) => {
   isMobile = b;
 });
-
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -43,6 +35,17 @@ export default class Home extends React.Component {
   }
 
   render() {
+    const source = this.props.isChinese ? DataSourceCN : DataSource;
+    const {
+      Banner50DataSource,
+      ServiceDataSource,
+      StatDataSource,
+      ProductDataSource,
+      TestimonialsDataSource,
+      BookDataSource,
+      PortfolioDataSource,
+    } = source;
+
     const children = [
       <Banner5
         id="Banner5_0"

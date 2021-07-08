@@ -2,6 +2,7 @@ import React from "react";
 import QueueAnim from "rc-queue-anim";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import { Row, Col, Form, Input, Button } from "antd";
+import emailService from '../service'
 
 export default function ContactForm(props) {
   const { ...tagProps } = props;
@@ -25,21 +26,22 @@ export default function ContactForm(props) {
         },
   };
 
-  const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
+  // const encode = (data) => {
+  //   return Object.keys(data)
+  //       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //       .join("&");
+  // }
 
   const onFinish = (values) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact",
-        ...values,
-      }),
-    })
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({
+    //     "form-name": "contact",
+    //     ...values,
+    //   }),
+    // })
+    emailService(values)
       .then(() => alert("Form Successfully Sent"))
       .catch((error) => alert(error));
   };
@@ -48,10 +50,10 @@ export default function ContactForm(props) {
     <div className="home-page-wrapper content5-wrapper">
       <OverPack className="home-page content5" component={Row}>
         <QueueAnim
-          type={animType.queue}
+          // type={animType.queue}
           key="text"
-          leaveReverse
-          ease={["easeOutCubic", "easeInCubic"]}
+          // leaveReverse
+          // ease={["easeOutCubic", "easeInCubic"]}
           className="content6-text"
           component={Col}
           componentProps={{
@@ -91,7 +93,7 @@ export default function ContactForm(props) {
               <Input name="phone" />
             </Form.Item>
             <Form.Item
-              label="email"
+              label="Email"
               name="email"
               type="email"
               key="email"

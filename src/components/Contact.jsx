@@ -7,7 +7,8 @@ import Feature2 from "./Feature2";
 import ContactForm from "./Form";
 import Book from "./Book";
 
-import { Feature20DataSource, BookDataSource } from "./data.source";
+import DataSource from "./data.source";
+import DataSourceCN from "./data.source.cn";
 
 let isMobile;
 enquireScreen((b) => {
@@ -30,6 +31,9 @@ export default class Home extends React.Component {
   }
 
   render() {
+    const source = this.props.isChinese ? DataSourceCN : DataSource;
+    const { Feature20DataSource, BookDataSource } = source;
+
     const children = [
       <Feature2
         id="Feature2"

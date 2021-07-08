@@ -64,9 +64,6 @@ function Content2(props) {
           <div key="p" {...dataSource.content}>
             {dataSource.content.children}
           </div>
-          <div key="p2" {...dataSource.content}>
-            Email:  kaig.dev@gmail.com
-          </div>
         </QueueAnim>
         {!isMobile && img}
       </OverPack>

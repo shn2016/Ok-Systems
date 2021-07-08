@@ -6,10 +6,12 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import Nav3 from "./Nav3";
 import Footer0 from "./Footer0";
-import { Nav30DataSource, Footer00DataSource } from "./data.source";
+import DataSource from "./data.source";
+import DataSourceCN from "./data.source.cn";
+
 import "./less/antMotionStyle.module.less";
 
-React.useLayoutEffect = React.useEffect 
+React.useLayoutEffect = React.useEffect;
 let isMobile;
 enquireScreen((b) => {
   isMobile = b;
@@ -17,6 +19,9 @@ enquireScreen((b) => {
 
 export default function Layout(props) {
   const [isMobile, setIsMobile] = useState(false);
+
+  const source = props.isChinese ? DataSourceCN : DataSource;
+  const { Nav30DataSource, Footer00DataSource } = source;
 
   const data = useStaticQuery(graphql`
     query {
@@ -35,9 +40,7 @@ export default function Layout(props) {
   }, []);
 
   return (
-    <div
-      className="templates-wrapper"
-    >
+    <div className="templates-wrapper">
       <Helmet>
         <title>
           {props.pageTitle} | {data.site.siteMetadata.title}

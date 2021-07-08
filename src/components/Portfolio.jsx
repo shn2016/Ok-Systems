@@ -11,7 +11,7 @@ class Content5 extends React.PureComponent {
         <Col key={item.name} {...item}>
           <a {...item.children.wrapper}>
             <span {...item.children.img}>
-              <img src={item.children.img.children} alt="img" width="100%" />
+              <img src={item.children.img.children} alt="img" height="100%" />
             </span>
             <p {...item.children.content}>{item.children.content.children}</p>
           </a>
