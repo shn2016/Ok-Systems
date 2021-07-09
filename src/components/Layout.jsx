@@ -21,8 +21,8 @@ export default function Layout(props) {
   const [isMobile, setIsMobile] = useState(false);
 
   const source = props.isChinese ? DataSourceCN : DataSource;
-  const { Nav30DataSource, Footer00DataSource } = source;
-
+  const { Nav30DataSource, Footer00DataSource, SEODataSource } = source;
+  const { title, lang, description, keywords, twitter, robots } = SEODataSource;
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -41,10 +41,26 @@ export default function Layout(props) {
 
   return (
     <div className="templates-wrapper">
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+      >
         <title>
-          {props.pageTitle} | {data.site.siteMetadata.title}
+          {title} | {props.pageTitle} | {data.site.siteMetadata.title}
         </title>
+        <meta name="robots" content={robots} />
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta
+          property="og:title"
+          content={`${title} | ${props.pageTitle} | ${data.site.siteMetadata.title}`}
+        />
+        <meta name="keywords" content={keywords} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter.label1" content={twitter.label1} />
+        <meta name="twitter:data1" content={twitter.data1} />
       </Helmet>
       <Nav3
         id="Nav3_0"

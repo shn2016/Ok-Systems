@@ -7,6 +7,18 @@ import p5 from "../images/portfolio/p5.png";
 import p6 from "../images/portfolio/p6.png";
 import p7 from "../images/portfolio/p7.png";
 import p8 from "../images/portfolio/p8.png";
+import service1 from "../images/service/service1.png";
+import service2 from "../images/service/service2.png";
+import service3 from "../images/service/service3.png";
+import service4 from "../images/service/service4.png";
+import service5 from "../images/service/service5.png";
+import service6 from "../images/service/service6.png";
+import service7 from "../images/service/service7.png";
+import service8 from "../images/service/service8.png";
+import service9 from "../images/service/service9.png";
+import t1 from "../images/testinomials/t1.png";
+import t2 from "../images/testinomials/t2.png";
+import banner from "../images/banner.png";
 
 export const Nav30DataSource = {
   wrapper: { className: "header3 home-page-wrapper" },
@@ -156,8 +168,7 @@ export const Banner50DataSource = {
   },
   image: {
     className: "banner5-image",
-    children:
-      "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*-wAhRYnWQscAAAAAAAAAAABkARQnAQ",
+    children: banner,
   },
 };
 
@@ -184,8 +195,7 @@ export const ServiceDataSource = {
             {
               name: "image",
               className: "content0-block-icon",
-              children:
-                "https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png",
+              children: service1,
             },
             {
               name: "title",
@@ -207,8 +217,7 @@ export const ServiceDataSource = {
             {
               name: "image",
               className: "content0-block-icon",
-              children:
-                "https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png",
+              children: service2,
             },
             {
               name: "title",
@@ -233,8 +242,7 @@ export const ServiceDataSource = {
             {
               name: "image",
               className: "content0-block-icon",
-              children:
-                "https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png",
+              children: service3,
             },
             {
               name: "title",
@@ -283,8 +291,7 @@ export const ProductDataSource = {
         children: {
           icon: {
             className: "content3-icon",
-            children:
-              "https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png",
+            children: service4,
           },
           textWrapper: { className: "content3-text" },
           title: { className: "content3-title", children: "电商平台" },
@@ -302,8 +309,7 @@ export const ProductDataSource = {
         children: {
           icon: {
             className: "content3-icon",
-            children:
-              "https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png",
+            children: service5,
           },
           textWrapper: { className: "content3-text" },
           title: { className: "content3-title", children: "零售 & 餐饮" },
@@ -321,8 +327,7 @@ export const ProductDataSource = {
         children: {
           icon: {
             className: "content3-icon",
-            children:
-              "https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png",
+            children: service6,
           },
           textWrapper: { className: "content3-text" },
           title: { className: "content3-title", children: "企业人力资源" },
@@ -340,8 +345,7 @@ export const ProductDataSource = {
         children: {
           icon: {
             className: "content3-icon",
-            children:
-              "https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png",
+            children: service7,
           },
           textWrapper: { className: "content3-text" },
           title: { className: "content3-title", children: "高级定制" },
@@ -359,8 +363,7 @@ export const ProductDataSource = {
         children: {
           icon: {
             className: "content3-icon",
-            children:
-              "https://zos.alipayobjects.com/rmsportal/UsUmoBRyLvkIQeO.png",
+            children: service8,
           },
           textWrapper: { className: "content3-text" },
           title: {
@@ -381,8 +384,7 @@ export const ProductDataSource = {
         children: {
           icon: {
             className: "content3-icon",
-            children:
-              "https://zos.alipayobjects.com/rmsportal/ipwaQLBLflRfUrg.png",
+            children: service9,
           },
           textWrapper: { className: "content3-text" },
           title: { className: "content3-title", children: "在线预订" },
@@ -652,8 +654,7 @@ export const TestimonialsDataSource = {
           children: [
             {
               name: "image",
-              children:
-                "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*njqxS5Ky7CQAAAAAAAAAAABjARQnAQ",
+              children: t1,
               className: "teams0-image",
             },
             {
@@ -679,8 +680,7 @@ export const TestimonialsDataSource = {
           children: [
             {
               name: "image",
-              children:
-                "https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*--rVR4hclJYAAAAAAAAAAABjARQnAQ",
+              children: t2,
               className: "teams0-image",
             },
             {
@@ -785,6 +785,20 @@ export const Feature20DataSource = {
   },
 };
 
+export const SEODataSource = {
+  lang: "ch",
+  title: "墨尔本网站开发",
+  description:
+    "Ok Sysytems, 服务于中小企业, 专注于提供经济解决方案，为企业削减成本，提供自动化需求",
+  keywords:
+    "Ok Systems, 墨尔本网站开发, 墨尔本网页开发， 墨尔本电商网站， 澳洲网页开发， 澳洲网站开发",
+  twitter: {
+    label1: "阅读时间",
+    data1: "别担心，不长",
+  },
+  robots: "index, follow",
+};
+
 export default {
   Banner50DataSource,
   ServiceDataSource,
@@ -796,4 +810,5 @@ export default {
   Nav30DataSource,
   Footer00DataSource,
   Feature20DataSource,
+  SEODataSource,
 };

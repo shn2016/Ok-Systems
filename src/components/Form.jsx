@@ -1,81 +1,31 @@
 import React from "react";
-import QueueAnim from "rc-queue-anim";
-import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
-import { Row, Col, Form, Input, Button } from "antd";
-import emailService from '../service'
+import { Form, Input, Button } from "antd";
+import emailService from "../service";
 
 export default function ContactForm(props) {
   const { ...tagProps } = props;
-  const { isMobile } = tagProps;
   delete tagProps.dataSource;
   delete tagProps.isMobile;
-  const animType = {
-    queue: isMobile ? "bottom" : "left",
-    one: isMobile
-      ? {
-          scaleY: "+=0.3",
-          opacity: 0,
-          type: "from",
-          ease: "easeOutQuad",
-        }
-      : {
-          x: "+=30",
-          opacity: 0,
-          type: "from",
-          ease: "easeOutQuad",
-        },
-  };
-
-  // const encode = (data) => {
-  //   return Object.keys(data)
-  //       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-  //       .join("&");
-  // }
 
   const onFinish = (values) => {
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({
-    //     "form-name": "contact",
-    //     ...values,
-    //   }),
-    // })
     emailService(values)
       .then(() => alert("Form Successfully Sent"))
       .catch((error) => alert(error));
   };
 
   return (
-    <div className="home-page-wrapper content5-wrapper">
-      <OverPack className="home-page content5" component={Row}>
-        <QueueAnim
-          // type={animType.queue}
-          key="text"
-          // leaveReverse
-          // ease={["easeOutCubic", "easeInCubic"]}
-          className="content6-text"
-          component={Col}
-          componentProps={{
-            md: 10,
-            xs: 24,
-          }}
-        >
+    <div className="contact-page page2">
+      <div className="contact-page-wrapper">
+        <h2>
+          Contact Form<span> 联系我们</span>
+        </h2>
+        <div className="home-code" style={{ padding: "35px 50px 2px 0px" }}>
           <Form
-            labelCol={{ span: 5 }}
-            wrapperCol={{ span: 19 }}
+            labelCol={{ span: 4 }}
+            wrapperCol={{ span: 20 }}
             name="contact"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             onFinish={onFinish}
           >
-            {/* <Form.Item name="bot-field" hidden key="bot-field">
-              <input type="hidden" name="bot-field" />
-            </Form.Item>
-            <Form.Item name="contact" key="contact" hidden>
-              <input type="hidden" name="form-name" value="contact" />
-            </Form.Item> */}
             <Form.Item
               label="Name"
               name="name"
@@ -111,14 +61,14 @@ export default function ContactForm(props) {
             >
               <Input.TextArea row={4} name="message" />
             </Form.Item>
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Form.Item wrapperCol={{ offset: 12, span: 12 }}>
               <Button type="primary" htmlType="submit">
-                Submit
+                <span style={{ color: "#fff" }}>Submit</span>
               </Button>
             </Form.Item>
           </Form>
-        </QueueAnim>
-      </OverPack>
+        </div>
+      </div>
     </div>
   );
 }

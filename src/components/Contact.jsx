@@ -3,7 +3,7 @@
 import React from "react";
 import { enquireScreen } from "enquire-js";
 
-import Feature2 from "./Feature2";
+import ContactInfo from "./ContactInfo";
 import ContactForm from "./Form";
 import Book from "./Book";
 
@@ -32,14 +32,10 @@ export default class Home extends React.Component {
 
   render() {
     const source = this.props.isChinese ? DataSourceCN : DataSource;
-    const { Feature20DataSource, BookDataSource } = source;
+    const { BookDataSource } = source;
 
     const children = [
-      <Feature2
-        id="Feature2"
-        key="Feature2"
-        dataSource={Feature20DataSource}
-        isMobile={this.state.isMobile}
+      <ContactInfo
       />,
       <ContactForm key="contactForm" isMobile={this.state.isMobile} />,
       <Book

@@ -45,7 +45,7 @@ function Content2(props) {
   return (
     <div {...tagProps} {...dataSource.wrapper}>
       <OverPack {...dataSource.OverPack} component={Row}>
-        {isMobile && img}
+        {/* {isMobile && img} */}
         <QueueAnim
           type={animType.queue}
           key="text"
