@@ -1,11 +1,21 @@
 module.exports = {
   siteMetadata: {
-    siteUrl:"https://www.oksystems.com.au/",
+    siteUrl: "https://www.oksystems.com.au/",
     title: "Ok Systems",
     description: "The online web service provider",
   },
   plugins: [
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-139119745-2",
+        head: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-antd",
       options: {
@@ -21,14 +31,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "277145431",
-      },
-    },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
